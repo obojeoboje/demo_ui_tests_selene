@@ -1,9 +1,7 @@
 import allure
-from selene.support.shared import browser
-
-
 from components.staya import header_menu, cart_rightside_menu
 from pages.staya_dog import main_page, product_page, catalog_page, checkout_page
+
 
 @allure.parent_suite("Web")
 @allure.suite("Cart")
@@ -31,6 +29,7 @@ def test_add_to_cart(setup_browser):
     with allure.step('Проверить что в корзине лежит добавленный товар'):
         checkout_page.assert_product_in_cart()
 
+
 @allure.parent_suite("Web")
 @allure.suite("Cart")
 @allure.title("Clearing a cart")
@@ -44,5 +43,3 @@ def test_clear_cart(setup_browser):
         checkout_page.clear_the_cart()
     with allure.step('Проверить, что корзина пустая'):
         checkout_page.assert_the_cart_is_emply()
-
-

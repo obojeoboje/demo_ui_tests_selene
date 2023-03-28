@@ -16,6 +16,7 @@ def test_collections(setup_browser):
     with allure.step('Проверить что отображаются товары этой коллекции'):
         catalog_page.assert_collection("Mono Yellow")
 
+
 @allure.parent_suite("Web")
 @allure.suite("Filters")
 @allure.title("New products is visible")
@@ -27,6 +28,7 @@ def test_new_products(setup_browser):
         catalog_page.choose_new_products()
     with allure.step('Проверить, что отображаются новые товары'):
         catalog_page.assert_new_products()
+
 
 @allure.parent_suite("Web")
 @allure.suite("Filters")

@@ -1,16 +1,13 @@
 import allure
-from selene.support.shared import browser
 
 from components.staya import header_menu
-from pages.staya_dog import authorization_page, profile_page
-
-
-
+from pages.staya_dog import authorization_page, profile_page, main_page
 
 @allure.parent_suite("Web")
 @allure.suite("Authorization")
 @allure.title("Log in to system")
 def test_authorization(setup_browser):
+    main_page.open_main_page()
     with allure.step('Press log in button'):
         header_menu.press_log_in()
 
@@ -31,6 +28,10 @@ def test_authorization(setup_browser):
 @allure.suite("Authorization")
 @allure.title("Log out from system")
 def test_logout(setup_browser):
+    main_page.open_main_page()
+    with allure.step('Open profile'):
+        header_menu.open_profile()
+
     with allure.step('Log out from account'):
         profile_page.log_out()
 

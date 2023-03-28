@@ -3,17 +3,12 @@ from selene.support.shared import browser
 from selene import by
 from locators.pages import authorization_locators
 
+class AuthorizationPage:
+    def type_email(self, email):
+        browser.all(by.xpath(authorization_locators.input_email)).first.type(email)
 
-def type_email():
-    browser.all(by.xpath(authorization_locators.input_email)).first.type("obojealexander@gmail.com")
+    def type_password(self, password):
+        browser.all(by.xpath(authorization_locators.input_password)).first.type(password)
 
-def type_password():
-    browser.all(by.xpath(authorization_locators.input_password)).first.type("Github505")
-
-def submit_log_in():
-    browser.element(by.xpath(authorization_locators.submit_button)).click()
-
-
-
-
-
+    def submit_log_in(self):
+        browser.element(by.xpath(authorization_locators.submit_button)).click()

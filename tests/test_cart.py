@@ -1,45 +1,45 @@
 import allure
-from components.staya import header_menu, cart_rightside_menu
-from pages.staya_dog import main_page, product_page, catalog_page, checkout_page
-
+# from components.staya_dog import header_menu, cart_rightside_menu
+# from pages.staya_dog import main_page, product_page, catalog_page, checkout_page
+from app import app
 
 @allure.parent_suite("Web")
 @allure.suite("Cart")
 @allure.title("Adding a product to cart")
 def test_add_to_cart(setup_browser):
-    main_page.open_main_page()
+    app.main.open_main_page()
 
     with allure.step('Перейти в каталог'):
-        header_menu.choose_section("Каталог")
+        app.header_menu.choose_section("Каталог")
 
     with allure.step('Выбрать случайный товар'):
-        catalog_page.choose_products_in_stock()
-        catalog_page.choose_random_product()
-        product_page.remember_product()
+        app.catalog.choose_products_in_stock()
+        app.catalog.choose_random_product()
+        app.product.remember_product()
 
     with allure.step('Выбрать размер'):
-        product_page.select_size()
+        app.product.select_size()
 
     with allure.step('Добавить в корзину'):
-        product_page.add_to_cart()
+        app.product.add_to_cart()
 
     with allure.step('Перейти в корзину'):
-        cart_rightside_menu.submit_checkout()
+        app.rightside_cart.submit_checkout()
 
     with allure.step('Проверить что в корзине лежит добавленный товар'):
-        checkout_page.assert_product_in_cart()
+        app.checkout.assert_product_in_cart()
 
 
 @allure.parent_suite("Web")
 @allure.suite("Cart")
 @allure.title("Clearing a cart")
 def test_clear_cart(setup_browser):
-    main_page.open_main_page()
+    app.main.open_main_page()
     with allure.step('Открыть меню корзины'):
-        header_menu.open_cart()
+        app.header_menu.open_cart()
     with allure.step('Перейти в корзину'):
-        cart_rightside_menu.submit_checkout()
+        app.rightside_cart.submit_checkout()
     with allure.step('Очистить корзину'):
-        checkout_page.clear_the_cart()
+        app.checkout.clear_the_cart()
     with allure.step('Проверить, что корзина пустая'):
-        checkout_page.assert_the_cart_is_emply()
+        app.checkout.assert_the_cart_is_emply()

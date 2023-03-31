@@ -1,9 +1,7 @@
 import os
 
-import allure
 import pytest
-from dotenv import load_dotenv
-from selene.support.shared import browser, config
+from selene.support.shared import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from utils import attach

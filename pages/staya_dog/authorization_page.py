@@ -1,9 +1,12 @@
 import allure
 from selene.support.shared import browser
 from selene import by
+
+from pages.base_page import BasePage
 from locators.pages import authorization_locators
 
-class AuthorizationPage:
+
+class AuthorizationPage(BasePage):
     def type_email(self, email):
         browser.all(by.xpath(authorization_locators.input_email)).first.type(email)
 

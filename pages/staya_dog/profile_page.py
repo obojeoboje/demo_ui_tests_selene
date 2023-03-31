@@ -3,6 +3,7 @@ from selene.support.shared import browser
 from selene import by, have
 from locators.pages import profile_locators
 
+
 class ProfilePage:
     def check_orders_exists(self):
         browser.element(by.xpath(profile_locators.my_orders)).should(have.text("Мои заказы"))

@@ -2,7 +2,7 @@ import allure
 from app import app
 
 
-class TestCollections:
+class TestCollectionProducts:
     @allure.parent_suite("Web")
     @allure.suite("Filters")
     @allure.title("Collections is visible")

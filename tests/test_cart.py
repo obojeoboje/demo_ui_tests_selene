@@ -7,7 +7,7 @@ class TestAddToCart:
     @allure.suite("Cart")
     @allure.title("Adding a product to cart")
     def test_add_to_cart(self):
-        app.main.open_main_page()
+        app.base.open_main_page()
 
         with allure.step('Перейти в каталог'):
             app.header_menu.choose_section("Каталог")
@@ -33,7 +33,7 @@ class TestAddToCart:
 class TestClearCart:
     @classmethod
     def setup_class(cls):
-        app.main.open_main_page()
+        app.base.open_main_page()
 
         with allure.step('Добавление товара в корзину'):
             app.header_menu.choose_section("Каталог")
@@ -48,7 +48,7 @@ class TestClearCart:
 
             app.rightside_cart.submit_checkout()
 
-            app.main.open_main_page()
+            app.base.open_main_page()
 
     @allure.parent_suite("Web")
     @allure.suite("Cart")

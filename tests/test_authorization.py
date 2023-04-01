@@ -1,7 +1,5 @@
 import allure
 
-# from components.staya_dog import header_menu
-# from pages.staya_dog import authorization_page, profile_page, main_page
 from app import app
 from data.auth_data import StayaAuth
 
@@ -12,7 +10,7 @@ class TestAuthorization:
     @allure.title("Log in to system")
     def test_authorization(self):
         staya_auth = StayaAuth.get_auth()
-        app.main.open_main_page()
+        app.base.open_main_page()
 
         with allure.step('Press log in button'):
             app.header_menu.press_log_in()
@@ -35,7 +33,7 @@ class TestLogout:
     @allure.suite("Authorization")
     @allure.title("Log out from system")
     def test_logout(self):
-        app.main.open_main_page()
+        app.base.open_main_page()
         with allure.step('Open profile'):
             app.header_menu.open_profile()
 

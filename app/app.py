@@ -3,7 +3,7 @@ from components.staya_dog.header_menu import HeaderMenu
 from pages.staya_dog.authorization_page import AuthorizationPage
 from pages.staya_dog.catalog_page import CatalogPage
 from pages.staya_dog.checkout_page import CheckoutPage
-from pages.staya_dog.main_page import MainPage
+from pages.base_page import BasePage
 from pages.staya_dog.product_page import ProductPage
 from pages.staya_dog.profile_page import ProfilePage
 
@@ -12,6 +12,6 @@ header_menu = HeaderMenu()
 auth = AuthorizationPage()
 catalog = CatalogPage()
 checkout = CheckoutPage()
-main = MainPage()
+base = BasePage()
 product = ProductPage()
 profile = ProfilePage()

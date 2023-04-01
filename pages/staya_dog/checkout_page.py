@@ -1,13 +1,10 @@
-import allure
 from selene.support.shared import browser
-from selene import by, have, be, query
+from selene import by, have, be
+from pages.base_page import BasePage
 from locators.pages import checkout_locators
-# from pages.staya_dog.product_page import ProductPage
-from app import app
-import random
 
 
-class CheckoutPage:
+class CheckoutPage(BasePage):
     def assert_product_in_cart(self, collection_name, article_name):
         browser.element(by.xpath(checkout_locators.product_collection_name)).should(be.visible). \
             should(have.text(collection_name))

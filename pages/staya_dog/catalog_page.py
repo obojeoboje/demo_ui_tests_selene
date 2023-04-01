@@ -1,11 +1,11 @@
-import allure
 from selene.support.shared import browser
-from selene import by, have, be, query
+from selene import by, have, be
 from locators.pages import catalog_locators
+from pages.base_page import BasePage
 import random
 
 
-class CatalogPage:
+class CatalogPage(BasePage):
     def choose_collection(self, collection_name):
         browser.element(by.xpath(catalog_locators.filter_wrapper)).should(be.visible)
         browser.element(by.xpath(catalog_locators.collections.format(text=collection_name))).click()

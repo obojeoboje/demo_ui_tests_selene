@@ -1,10 +1,10 @@
-import allure
 from selene.support.shared import browser
 from selene import by, have
 from locators.pages import profile_locators
+from pages.base_page import BasePage
 
 
-class ProfilePage:
+class ProfilePage(BasePage):
     def check_orders_exists(self):
         browser.element(by.xpath(profile_locators.my_orders)).should(have.text("Мои заказы"))
 

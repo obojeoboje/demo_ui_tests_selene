@@ -1,5 +1,3 @@
-from selene.api import s, ss
-from selene.support.conditions import be
 from selene.support.shared import browser
 
 

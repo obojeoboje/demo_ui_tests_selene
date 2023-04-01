@@ -7,7 +7,7 @@ class TestCollections:
     @allure.suite("Filters")
     @allure.title("Collections is visible")
     def test_collections(self):
-        app.main.open_main_page()
+        app.base.open_main_page()
         with allure.step('Перейти в каталог'):
             app.header_menu.choose_section("Каталог")
         with allure.step('Выбрать коллекцию'):
@@ -21,7 +21,7 @@ class TestNewProducts:
     @allure.suite("Filters")
     @allure.title("New products is visible")
     def test_new_products(self):
-        app.main.open_main_page()
+        app.base.open_main_page()
         with allure.step('Перейти в каталог'):
             app.header_menu.choose_section("Каталог")
         with allure.step('Выбрать новинки'):
@@ -35,7 +35,7 @@ class TestCharityProducts:
     @allure.suite("Filters")
     @allure.title("Charity products is visible")
     def test_charity_products(self):
-        app.main.open_main_page()
+        app.base.open_main_page()
         with allure.step('Перейти в каталог'):
             app.header_menu.choose_section("Каталог")
         with allure.step('Выбрать Добро вместе'):

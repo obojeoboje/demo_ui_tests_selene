@@ -1,4 +1,3 @@
-import allure
 from selene.support.shared import browser
 from selene import by
 

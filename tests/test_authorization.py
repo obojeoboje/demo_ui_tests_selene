@@ -1,4 +1,5 @@
 import allure
+from allure_commons.types import Severity
 
 from app import app
 from data.auth_data import StayaAuth
@@ -6,6 +7,7 @@ from data.auth_data import StayaAuth
 
 class TestAuthorization:
     @allure.parent_suite("Web")
+    @allure.severity(Severity.CRITICAL)
     @allure.suite("Authorization")
     @allure.title("Log in to system")
     def test_authorization(self):
@@ -30,6 +32,7 @@ class TestAuthorization:
 
 class TestLogout:
     @allure.parent_suite("Web")
+    @allure.severity(Severity.CRITICAL)
     @allure.suite("Authorization")
     @allure.title("Log out from system")
     def test_logout(self):

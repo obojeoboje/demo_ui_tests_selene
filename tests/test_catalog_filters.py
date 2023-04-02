@@ -1,9 +1,12 @@
 import allure
+from allure_commons.types import Severity
+
 from app import app
 
 
 class TestCollectionProducts:
     @allure.parent_suite("Web")
+    @allure.severity(Severity.MINOR)
     @allure.suite("Filters")
     @allure.title("Collections is visible")
     def test_collections(self):
@@ -18,6 +21,7 @@ class TestCollectionProducts:
 
 class TestNewProducts:
     @allure.parent_suite("Web")
+    @allure.severity(Severity.TRIVIAL)
     @allure.suite("Filters")
     @allure.title("New products is visible")
     def test_new_products(self):
@@ -32,6 +36,7 @@ class TestNewProducts:
 
 class TestCharityProducts:
     @allure.parent_suite("Web")
+    @allure.severity(Severity.TRIVIAL)
     @allure.suite("Filters")
     @allure.title("Charity products is visible")
     def test_charity_products(self):

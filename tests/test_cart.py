@@ -1,9 +1,11 @@
 import allure
 from app import app
+from allure_commons.types import Severity
 
 
 class TestAddToCart:
     @allure.parent_suite("Web")
+    @allure.severity(Severity.NORMAL)
     @allure.suite("Cart")
     @allure.title("Adding a product to cart")
     def test_add_to_cart(self):
@@ -50,6 +52,7 @@ class TestClearCart:
             app.base.open_main_page()
 
     @allure.parent_suite("Web")
+    @allure.severity(Severity.NORMAL)
     @allure.suite("Cart")
     @allure.title("Clearing a cart")
     def test_clear_cart(self):

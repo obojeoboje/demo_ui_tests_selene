@@ -40,7 +40,6 @@ class TestClearCart:
 
             app.catalog.choose_products_in_stock()
             app.catalog.choose_random_product()
-            app.product.remember_product()
 
             app.product.select_size()
 
